@@ -4,13 +4,12 @@ import { push } from "connected-react-router";
 import { routes } from "../Router/index";
 import {
 	PostCard, HeaderPost, FooterPost,
-	Comments, Thumbs, PostContainer,
-	NewPostContainer, TextContainer,
-	TextItem, StyledTextArea, StyledTitle,
-	ButtonPost, ThumbArrow
+	Comments, Thumbs, PostContainer,TextContainer,
+	TextItem,  ThumbArrow
 } from "./style";
 import ArrowUp from './img/arrowUp.png'
 import ArrowDown from './img/arrowDown.png'
+import NewPost from "../../components/NewPost/NewPost";
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -22,17 +21,7 @@ class Feed extends React.Component {
 	render() {
 		return (
 			<PostContainer>
-				<NewPostContainer>
-					<StyledTitle>Faça um novo Post!</StyledTitle>
-					<StyledTextArea
-						label="O que você deseja postar?"
-						multiline
-						rowsMax="5"
-						margin="normal"
-						variant="outlined"
-					/>
-					<ButtonPost>POSTAR</ButtonPost>
-				</NewPostContainer>
+				<NewPost/>
 				<PostCard>
 					<HeaderPost>
 						<TextItem>Nome do usuário</TextItem>
@@ -62,8 +51,6 @@ const mapDispatchToProps = (dispatch) => {
 		goToPost: () => { dispatch(push(routes.post)) },
 	};
 };
-
-
 
 export default connect(
 	null,

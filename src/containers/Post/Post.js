@@ -1,18 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import { PostWrapper } from "./style"
 import { BoxPost } from "../../components/BoxPost/BoxPost";
 import { BoxComent } from "../../components/Coments/BoxComent";
 import { ComentWritter } from "../../components/Coments/ComentWritter";
-
-const PostWrapper = styled.div`
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
-`
-
 
 class Post extends React.Component {
     constructor (props) {

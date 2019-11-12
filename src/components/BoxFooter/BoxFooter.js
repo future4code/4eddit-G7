@@ -1,30 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-
-
-const BoxFooterWrapper = styled.div ` 
-    padding: 0 10px 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-style: solid none none none;
-    border-width: thin;
-    height: 5vh;
-    width: 100%;
-`
-
-const ReactionButtons = styled.div`
-    display: flex;
-    align-items: center;
-`
-
-const Button = styled.button `
-    height: 100%;
-`
-
-const ComentsNumber = styled.div `
-
-`
+import {
+    BoxFooterWrapper, ReactionButtons, Button
+}
+from "./style"
 
 export class BoxFooter extends React.Component {
     constructor (props) {
@@ -53,9 +31,9 @@ export class BoxFooter extends React.Component {
                     <p>{this.state.thumb}</p>
                     <Button onClick={this.onClickThumbUp}> + </Button>
                 </ReactionButtons>
-                <ComentsNumber>
+                <div>
                     <p>{this.state.comentsNumber}</p>
-                </ComentsNumber>
+                </div>
             </BoxFooterWrapper>
         )
     };

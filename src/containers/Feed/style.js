@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import 'typeface-ubuntu';
 import { TextField } from '@material-ui/core';
 
 export const PostContainer = styled.div`

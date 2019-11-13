@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router/index";
 import TextField from '@material-ui/core/TextField';
-import { RegisterWrapper, StyledForm, StyledFormControl, StyledButton, Buttons } from "./Style";
+import { RegisterWrapper, StyledForm, StyledFormControl, StyledButton, Buttons } from "./style";
 
 class Register extends React.Component {
     constructor (props) {

@@ -1,8 +1,7 @@
 import React from "react";
-import {
-    BoxFooterWrapper, ReactionButtons, Button
-}
-from "./style"
+import {BoxFooterWrapper, ReactionButtons, Button} from "./style"
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 export class BoxFooter extends React.Component {
     constructor (props) {
@@ -27,9 +26,9 @@ export class BoxFooter extends React.Component {
         return (
             <BoxFooterWrapper>
                 <ReactionButtons>
-                    <Button onClick={this.onClickThumbDown}> - </Button>
+                    <ThumbUpIcon onClick={this.onClickThumbUp}> + </ThumbUpIcon>
                     <p>{this.state.thumb}</p>
-                    <Button onClick={this.onClickThumbUp}> + </Button>
+                    <ThumbDownIcon onClick={this.onClickThumbDown}> - </ThumbDownIcon>
                 </ReactionButtons>
                 <div>
                     <p>{this.state.comentsNumber}</p>

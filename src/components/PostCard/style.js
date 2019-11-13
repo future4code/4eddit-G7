@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BoxPostWrapper = styled.div `
+export const PostCardWrapper = styled.div `
     border-style: solid;
     border-width: thin;
     margin-bottom: 5vh;
@@ -13,7 +13,7 @@ export const BoxPostWrapper = styled.div `
     justify-content: space-around;
 `
 
-export const BoxPostHeader = styled.div `
+export const PostCardHeader = styled.div `
     border-style: none none solid none;
     border-width: thin;
     height: 5vh;
@@ -23,7 +23,7 @@ export const BoxPostHeader = styled.div `
     justify-content: center;
 `
 
-export const BoxPostTitle = styled.div `
+export const PostCardTitle = styled.div `
     border-style: none none solid none;
     border-width: thin;
     height: 10vh;
@@ -33,7 +33,7 @@ export const BoxPostTitle = styled.div `
     justify-content: center;
 `
 
-export const BoxPostText = styled.div `
+export const PostCardText = styled.div `
     min-height: 15vh;
     width: 100%;
     display: flex;

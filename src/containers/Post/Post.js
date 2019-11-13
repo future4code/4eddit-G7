@@ -1,6 +1,6 @@
 import React from "react";
 import { PostWrapper } from "./style"
-import { BoxPost } from "../../components/BoxPost/BoxPost";
+import { PostCard } from "../../components/PostCard/PostCard";
 import { BoxComent } from "../../components/Coments/BoxComent";
 import { ComentWritter } from "../../components/Coments/ComentWritter";
 
@@ -18,7 +18,7 @@ class Post extends React.Component {
     render () {
         return (
             <PostWrapper>
-                <BoxPost 
+                <PostCard 
                     user={this.state.user}
                     post={this.state.post}
                     title={this.state.title}

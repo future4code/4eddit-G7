@@ -1,42 +1,31 @@
 import styled from 'styled-components';
 
-export const PostCardWrapper = styled.div `
-    border-style: solid;
-    border-width: thin;
-    margin-bottom: 5vh;
-    min-height: 35vh;
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
+export const PostCardContainer = styled.div`
+  width: 450px;
+  height: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px #2A3439;
 `
-
-export const PostCardHeader = styled.div `
-    border-style: none none solid none;
-    border-width: thin;
-    height: 5vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const HeaderPost = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
 `
-
-export const PostCardTitle = styled.div `
-    border-style: none none solid none;
-    border-width: thin;
-    height: 10vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const TextContainer = styled.div`
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
 `
-
-export const PostCardText = styled.div `
-    min-height: 15vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const TextItem = styled.p`
+  margin: 0;
 `

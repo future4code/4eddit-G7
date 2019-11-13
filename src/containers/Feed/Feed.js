@@ -10,6 +10,8 @@ import {
 import ArrowUp from './img/arrowUp.png'
 import ArrowDown from './img/arrowDown.png'
 import NewPost from "../../components/NewPost/NewPost";
+import { getPosts } from "../../Actions/post";
+
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -17,6 +19,14 @@ class Feed extends React.Component {
 		this.state = {
 		};
 	};
+
+	componentDidMount = () => {
+		const token = window.localStorage.getItem("token");
+		if(!token) {
+			this.props.goToRegister();
+		}	
+		this.props.getPosts();
+	}
 
 	render() {
 		return (
@@ -32,9 +42,9 @@ class Feed extends React.Component {
 					</TextContainer>
 					<FooterPost>
 						<Thumbs>
-							<ThumbArrow src={ArrowUp} />
+							<ThumbArrow src={ArrowUp}/>
 							0
-							<ThumbArrow src={ArrowDown} />
+							<ThumbArrow src={ArrowDown}/>
 						</Thumbs>
 						<Comments>
 							<TextItem> 0 comentários</TextItem>
@@ -46,13 +56,21 @@ class Feed extends React.Component {
 	};
 };
 
+const mapStateToProps = (state) => {
+	return {
+		posts: state.posts
+	}
+}
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		goToPost: () => { dispatch(push(routes.post)) },
+		getPosts: () => { dispatch(getPosts()) },
+		goToRegister: () => { dispatch(push(routes.register)) }
 	};
 };
 
 export default connect(
-	null,
+	mapStateToProps,
 	mapDispatchToProps
 )(Feed)

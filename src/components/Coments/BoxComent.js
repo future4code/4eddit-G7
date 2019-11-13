@@ -1,5 +1,5 @@
 import React from "react";
-import { BoxFooter } from "../BoxFooter/BoxFooter"
+import CardFooter from "../CardFooter/CardFooter"
 import {
     BoxComentWrapper, BoxComentHeader, BoxComentText
 }
@@ -10,7 +10,7 @@ export function BoxComent(props) {
         <BoxComentWrapper>
             <BoxComentHeader>{props.user}</BoxComentHeader>
             <BoxComentText>{props.coment}</BoxComentText>
-            <BoxFooter></BoxFooter>
+            <CardFooter></CardFooter>
         </BoxComentWrapper>
     )
 }

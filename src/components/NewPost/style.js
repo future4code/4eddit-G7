@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { TextField } from '@material-ui/core';
 
-export const NewPostContainer = styled.div`
+export const NewPostContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;

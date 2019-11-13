@@ -15,18 +15,27 @@ class Feed extends React.Component {
 	};
 
 	componentDidMount = () => {
-		// const token = window.localStorage.getItem("token");
-		// if(!token) {
-		// 	this.props.goToRegister();
-		// }	
+		const token = window.localStorage.getItem("token");
+		if(!token) {
+			this.props.goToRegister();
+		}	
 		this.props.getPosts();
 	}
 
 	render() {
+		console.log(this.props.posts)
 		return (
 			<PostContainer>
 				<NewPost/>
-				<PostCard/>
+				{this.props.posts.map(post => {
+					return <PostCard
+								title={post.title}
+								username={post.username}
+								text={post.text}
+								id={post.id}
+								votesCount={post.votesCount}
+						    />
+				})}
 			</PostContainer>
 		);
 	};

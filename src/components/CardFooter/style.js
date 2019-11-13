@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BoxFooterWrapper = styled.div ` 
+export const CardFooterWrapper = styled.div ` 
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
@@ -14,8 +14,4 @@ export const BoxFooterWrapper = styled.div `
 export const ReactionButtons = styled.div`
     display: flex;
     align-items: center;
-`
-
-export const Button = styled.button `
-    height: 100%;
 `

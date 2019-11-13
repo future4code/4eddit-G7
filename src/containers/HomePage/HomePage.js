@@ -4,30 +4,48 @@ import { push } from "connected-react-router";
 import { routes } from "../Router/index";
 import TextField from '@material-ui/core/TextField';
 import { HomePageWrapper, StyledForm, StyledFormControl, StyledButton, Buttons } from "./style";
+import { signIn } from "../../Actions/signUp";
 
 class HomePage extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-
+            email: "",
+            password: "",
         };
     };
 
-    teste = () =>{
-        console.log("teste");
+    onSubmitForm = (event) => {        
+        const {email, password} = this.state;
+        this.props.signIn(email, password);
+        event.preventDefault();
+    }
+
+
+    onHandleFieldChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render () {
+        const { email, password } = this.state
         return (
             <HomePageWrapper>
-                <StyledForm>
-                    <StyledFormControl onSubmit={this.teste}>
+                <StyledForm onSubmit={this.onSubmitForm}>
+                    <StyledFormControl>
                         <h2>Bem vindo ao Feddit!</h2>
-                        <TextField fullWidth required name="email" type="email" required label="E-mail" />
-                        <TextField fullWidth required name="password" type="password" label="Senha" />
+                        <TextField fullWidth required name="email" type="email" required label="E-mail" 
+                            value={email} 
+                            onChange={this.onHandleFieldChange} 
+                        />
+                        <TextField fullWidth required name="password" type="password" label="Senha" 
+                            value={password} 
+                            onChange={this.onHandleFieldChange} 
+                        />
                     </StyledFormControl>
                     <Buttons>
-                        <StyledButton variant="contained" type="submit" color="primary" onClick={this.props.goToFeed}>Entrar</StyledButton>
+                        <StyledButton variant="contained" type="submit" color="primary">Entrar</StyledButton>
                         <StyledButton variant="contained" color="primary" onClick={this.props.goToRegister}>Cadastrar</StyledButton>
                     </Buttons>
                 </StyledForm>
@@ -39,7 +57,8 @@ class HomePage extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         goToRegister: () => {dispatch(push(routes.register))},
-        goToFeed: () => {dispatch(push(routes.feed))} 
+        goToFeed: () => {dispatch(push(routes.feed))},
+        signIn: (email, password) => {dispatch(signIn(email, password))} 
     }
 }
 

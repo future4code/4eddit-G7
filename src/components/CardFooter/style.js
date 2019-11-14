@@ -9,8 +9,7 @@ export const CardFooterWrapper = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-style: solid none none none;
-    border-width: thin;
+    border-top: solid 1px orange;    
     height: 5vh;
     width: 100%;
 `

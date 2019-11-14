@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const PostWrapper = styled.div`
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    background-color: bisque;    
 `

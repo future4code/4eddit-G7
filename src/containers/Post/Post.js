@@ -24,7 +24,7 @@ class Post extends React.Component {
         return (
             <PostWrapper>
                 <PostCard 
-                    user={post.username}
+                    username={post.username}
                     text={post.text}
                     title={post.title}
                     id={post.id}

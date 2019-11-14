@@ -18,7 +18,7 @@ class Feed extends React.Component {
 		const token = window.localStorage.getItem("token");
 		if(!token) {
 			this.props.goToRegister();
-		}	
+		}
 		this.props.getPosts();
 	}
 

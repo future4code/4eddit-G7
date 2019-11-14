@@ -1,5 +1,5 @@
 import React from "react";
-import {CardFooterWrapper, ReactionButtons} from "./style";
+import {CardFooterWrapper, ReactionButtons, StyledThumbUp, StyledThumbDown} from "./style";
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import { connect } from "react-redux";
@@ -30,9 +30,15 @@ export class CommentFooter extends React.Component {
         return (
             <CardFooterWrapper>
                 <ReactionButtons>
-                    <ThumbUpIcon onClick={() => {this.onClickThumbUp(commentId, postId)}} />
-                        <p>{this.props.votesCount}</p>
-                    <ThumbDownIcon onClick={() => {this.onClickThumbDown(commentId, postId)}} />
+                    <StyledThumbUp 
+                        color="primary" 
+                        onClick={() => {this.onClickThumbUp(commentId, postId)}} 
+                    />
+                    <p>{this.props.votesCount}</p>
+                    <StyledThumbDown 
+                        color="primary" 
+                        onClick={() => {this.onClickThumbDown(commentId, postId)}} 
+                    />
                 </ReactionButtons>
             </CardFooterWrapper>
         )

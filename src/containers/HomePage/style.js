@@ -27,7 +27,7 @@ export const StyledForm = styled.form`
 `
 
 export const StyledTextField = styled(TextField)`
-    margin: 10px;
+    margin-top: 10px; 
 `
 
 export const StyledFormControl = styled(FormControl)`

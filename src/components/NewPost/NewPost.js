@@ -16,12 +16,18 @@ class NewPost extends React.Component {
     const { text, title } = this.state;
     this.props.createPost(text, title);
     event.preventDefault();
+    alert("Post criado com sucesso!");
+    this.cleanFields();
   }
 
   onHandleFieldChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
+  }
+
+  cleanFields = () =>{
+    this.setState({text: "", title: ""});
   }
 
   render() {

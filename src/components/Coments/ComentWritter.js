@@ -1,9 +1,5 @@
 import React from "react";
-import {
-    ComentWritterWrapper, ComentWritterText, ComentWritterFooter
-}
-    from "./style"
-import Textfield from '@material-ui/core/TextField'
+import { ComentWritterWrapper, ComentWritterText, StyledTextField, StyledButton} from "./style"
 import { createComment } from '../../Actions/post'
 import { connect } from 'react-redux'
 
@@ -34,7 +30,8 @@ class ComentWritter extends React.Component {
         return (
             <ComentWritterWrapper>
                 <ComentWritterText onSubmit={this.onSubmitForm}>
-                    <Textfield
+                    <StyledTextField
+                        fullWidth
                         required
                         label="Deixe seu comentário!"
                         margin="normal"
@@ -42,7 +39,7 @@ class ComentWritter extends React.Component {
                         value={text}
                         onChange={this.onHandleFieldChange}
                     />
-                    <button type="submit">COMENTAR</button>
+                    <StyledButton color="primary" variant="contained" type="submit">COMENTAR</StyledButton>
                 </ComentWritterText>
             </ComentWritterWrapper>
         )

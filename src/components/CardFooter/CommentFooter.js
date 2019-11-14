@@ -43,7 +43,6 @@ const mapStateToProps = (state) => ({
     postId: state.id.id,
 }) 
 
-
 const mapDispatchToProps = (dispatch) => ({
     voteComment: (directionVote, commentId, postId) => {dispatch(voteComment(directionVote, commentId, postId))},
 })

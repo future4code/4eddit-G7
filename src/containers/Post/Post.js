@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { PostWrapper } from "./style"
 import { PostCard } from "../../components/PostCard/PostCard";
 import { BoxComent } from "../../components/Coments/BoxComent";
-import { ComentWritter } from "../../components/Coments/ComentWritter";
+import  ComentWritter  from "../../components/Coments/ComentWritter";
 import { getPostDetail } from "../../Actions/post";
 
 

@@ -76,3 +76,26 @@ export const getPostDetail = (id) => async (dispatch) => {
         console.log("Error:", e.message);
     };
 }
+
+
+export const createComment = (text, postId) => async (dispatch) => {
+    console.log(text, postId)
+    const data = {
+        text: text
+    }
+    const token = window.localStorage.getItem("token");
+    try {
+        await axios.post(
+            `https://us-central1-missao-newton.cloudfunctions.net/fourEddit/posts/${postId}/comment`,
+            data,
+            {
+                headers: {
+                    auth: token
+                }
+            }
+        );
+    } catch (e) {
+        console.log("Error:", e.message);
+    }
+    dispatch(getPostDetail(postId))
+}

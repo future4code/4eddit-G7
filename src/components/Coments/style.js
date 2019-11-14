@@ -45,10 +45,11 @@ export const ComentWritterWrapper = styled.div `
     justify-content: space-around;
 `
 
-export const ComentWritterText = styled.div `
+export const ComentWritterText = styled.form `
     min-height: 10vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `

@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { NewPostContainer, StyledTextArea, StyledTitle, ButtonPost, StyledTitlePost } from "./style";
+import { NewPostContainer, StyledButton, StyledTextArea, StyledTitle, ButtonPost, StyledTitlePost } from "./style";
 import { createPost } from "../../Actions/post";
-
 
 class NewPost extends React.Component {
   constructor(props) {
@@ -13,16 +12,15 @@ class NewPost extends React.Component {
     }
   }
 
-  
-  onSubmitForm = (event) => {        
-    const {text, title} = this.state;
+  onSubmitForm = (event) => {
+    const { text, title } = this.state;
     this.props.createPost(text, title);
     event.preventDefault();
   }
 
   onHandleFieldChange = (event) => {
     this.setState({
-        [event.target.name]: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -30,18 +28,19 @@ class NewPost extends React.Component {
     const { text, title } = this.state
     return (
       <NewPostContainer onSubmit={this.onSubmitForm}>
-        <StyledTitle>Faça um novo Post!</StyledTitle>
+        <StyledTitle>Postar no Feed</StyledTitle>
         <StyledTitlePost
           required
-          label="Qual o título do Post?"
+          label="Título do post..."
           margin="normal"
           name="title"
           value={title}
+          variant="outlined"
           onChange={this.onHandleFieldChange}
         />
         <StyledTextArea
           required
-          label="O que você deseja postar?"
+          label="Digite seu texto..."
           multiline
           rowsMax="5"
           margin="normal"
@@ -50,7 +49,7 @@ class NewPost extends React.Component {
           value={text}
           onChange={this.onHandleFieldChange}
         />
-        <ButtonPost>POSTAR</ButtonPost>
+        <StyledButton color="primary" variant="contained" type="submit">POSTAR</StyledButton>
       </NewPostContainer>
     )
   }
@@ -58,11 +57,11 @@ class NewPost extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createPost: (text, title) => {dispatch(createPost(text, title))}
+    createPost: (text, title) => { dispatch(createPost(text, title)) }
   };
 };
 
-export default connect (
+export default connect(
   null,
   mapDispatchToProps
 )(NewPost);

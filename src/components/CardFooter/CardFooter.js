@@ -1,13 +1,10 @@
 import React from "react";
 import { push } from "connected-react-router";
 import { routes } from "../../containers/Router/index";
-import {CardFooterWrapper, ReactionButtons} from "./style";
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import {CardFooterWrapper, ReactionButtons, StyledChatIcon, StyledCommentP, StyledThumbUp, StyledThumbDown} from "./style";
 import { connect } from "react-redux";
 import { vote } from "../../Actions/votes";
 import { setId } from "../../Actions/post";
-
 
 export class CardFooter extends React.Component {
     constructor (props) {
@@ -40,12 +37,20 @@ export class CardFooter extends React.Component {
         return (
             <CardFooterWrapper>
                 <ReactionButtons>
-                    <ThumbUpIcon onClick={() => {this.onClickThumbUp(id)}} />
-                        <p>{this.props.votesCount}</p>
-                    <ThumbDownIcon onClick={() => {this.onClickThumbDown(id)}} />
+                    <StyledThumbUp 
+                        color="primary" 
+                        onClick={() => {this.onClickThumbUp(id)}} 
+                    />
+                    <p>{this.props.votesCount}</p>
+                    <StyledThumbDown
+                        color="primary" 
+                        onClick={() => {this.onClickThumbDown(id)}} />
                 </ReactionButtons>
                 <div onClick={() => {this.loadPostDetails(id)}}>
-                    <p>{this.props.commentsNumber} Comentários</p>
+                    <StyledCommentP>
+                        {this.props.commentsNumber}
+                        <StyledChatIcon color="secondary"/>
+                    </StyledCommentP>
                 </div>
             </CardFooterWrapper>
         )

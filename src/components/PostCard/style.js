@@ -1,21 +1,30 @@
 import styled from 'styled-components';
 
-export const PostCardContainer = styled.div`
-  width: 450px;
-  height: 250px;
+export const PostCardContainer = styled.div`  
+  width: 25%;
+  min-width: 300px;
+  min-height: 150px;
+  margin: 10px auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 10px 10px 10px #2A3439;
+  background-color: white;
+  box-shadow: 0px 3px 5px #aaa;
+  border-radius: 5px;
+  
 `
 export const HeaderPost = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 30px;
+  color: salmon;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;;
+  font-size: 12pt;
+  text-transform: lowercase;
 `
 
 export const TitleContainer = styled.div`
@@ -24,6 +33,10 @@ export const TitleContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 30px;
+  color: orangered;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 `
 
 export const TextContainer = styled.div`
@@ -31,9 +44,10 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  color: white;
+  background-color: lightyellow;
+  border-radius: 5px;
   padding: 10px;
+  color: #804508;
 `
 export const TextItem = styled.p`
   margin: 0;

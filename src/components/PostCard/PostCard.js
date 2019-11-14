@@ -22,5 +22,4 @@ export function PostCard(props) {
 		</PostCardContainer>
 	)
 }
-
 export default PostCard;

@@ -34,6 +34,7 @@ class Feed extends React.Component {
 								text={post.text}
 								id={post.id}
 								votesCount={post.votesCount}
+								commentsNumber={post.commentsNumber}
 						    />
 				})}
 			</PostContainer>

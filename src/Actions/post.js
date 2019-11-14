@@ -1,11 +1,18 @@
 import axios from "axios"
 
-const setPosts = (postsList) => {
+export const setPosts = (postsList) => {
     return {
         type: "SET_POSTS",
         payload: { postsList: postsList }
     };
 };
+
+export const setPostDetail = (postDetail) => {
+    return {
+        type:"SET_POST_DETAIL",
+        payload: { postDetail: postDetail }
+    }
+}
 
 export const getPosts = () => async (dispatch) => {
     const token = window.localStorage.getItem("token");
@@ -45,3 +52,27 @@ export const createPost = (text, title) => async (dispatch) => {
     };
     dispatch(getPosts());
 };
+
+export const setId = (postId) => {
+    return {
+        type: "SET_ID",
+        payload: { postId }
+    }
+}
+
+export const getPostDetail = (id) => async (dispatch) => {
+    const token = window.localStorage.getItem("token");
+    try {
+        const response = await axios.get(
+            `https://us-central1-missao-newton.cloudfunctions.net/fourEddit/posts/${id}`,
+            {
+                headers: {
+                    auth: token
+                }
+            }
+        );
+        dispatch(setPostDetail(response.data.post))
+    } catch(e) {
+        console.log("Error:", e.message);
+    };
+}

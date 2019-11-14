@@ -17,6 +17,7 @@ export function PostCard(props) {
 			<CardFooter 
 				id={props.id}
 				votesCount={props.votesCount}
+				commentsNumber={props.commentsNumber}
 			/>
 		</PostCardContainer>
 	)

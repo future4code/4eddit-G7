@@ -40,5 +40,5 @@ export const voteComment = (directionVote, commentId, postId) => async (dispatch
     } catch (e) {
         console.log("Error:", e.message);
     }
-    dispatch(getPostDetail())
+    dispatch(getPostDetail(postId))
 }

@@ -17,12 +17,12 @@ export class CommentFooter extends React.Component {
     onClickThumbUp = (commentId, postId) => {
         const directionVote = 1
         this.props.voteComment(directionVote, commentId, postId)
-    }
+    };
 
     onClickThumbDown = (commentId, postId) => {
         const directionVote = -1
         this.props.voteComment(directionVote, commentId, postId)
-    }
+    };
 
     render () {
         const commentId = this.props.commentId

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router/index";
 import TextField from '@material-ui/core/TextField';
-import { HomePageWrapper, StyledForm, StyledFormControl, StyledButton, Buttons } from "./style";
+import { HomePageWrapper, StyledTextField, StyledForm, StyledFormControl, StyledButton, Buttons } from "./style";
 import { signIn } from "../../Actions/signUp";
 
 class HomePage extends React.Component {
@@ -34,14 +34,16 @@ class HomePage extends React.Component {
             <HomePageWrapper>
                 <StyledForm onSubmit={this.onSubmitForm}>
                     <StyledFormControl>
-                        <h2>Bem vindo ao Feddit!</h2>
-                        <TextField fullWidth required name="email" type="email" required label="E-mail" 
-                            value={email} 
-                            onChange={this.onHandleFieldChange} 
+                        <h2>Bem vind@ ao Feddit!</h2>
+                        <StyledTextField fullWidth required name="email" type="email" label="E-mail" 
+                            value={email}                             
+                            onChange={this.onHandleFieldChange}
+                            variant="outlined"
                         />
-                        <TextField fullWidth required name="password" type="password" label="Senha" 
+                        <StyledTextField fullWidth required name="password" type="password" label="Senha" 
                             value={password} 
                             onChange={this.onHandleFieldChange} 
+                            variant="outlined"
                         />
                     </StyledFormControl>
                     <Buttons>

@@ -23,7 +23,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
 export const signIn = (email, password) => async (dispatch) => {
     try {
         const response = await axios.post(
-            "https://us-central1-missao-newton.cloudfunctions.net/fourEddit/login",
+            'https://us-central1-future-apis.cloudfunctions.net/fourEddit/login' ,
             {
                 email, 
                 password,

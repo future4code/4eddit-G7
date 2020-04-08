@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect} from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router/index";
@@ -7,40 +7,34 @@ import NewPost from "../../components/NewPost/NewPost";
 import PostCard from "../../components/PostCard/PostCard"
 import { getPosts } from "../../Actions/post";
 
-class Feed extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-		};
-	};
+const Feed = (props) => {
 
-	componentDidMount = () => {
+	useEffect(() => {
 		const token = window.localStorage.getItem("token");
 		if(!token) {
-			this.props.goToRegister();
+			props.goToRegister();
 		}	
-		this.props.getPosts();
-	}
+		props.getPost();
+	}, [])
 
-	render() {
-		console.log(this.props.posts)
-		return (
-			<PostContainer>
-				<NewPost/>
-				{this.props.posts.map(post => {
-					return <PostCard
-								title={post.title}
-								username={post.username}
-								text={post.text}
-								id={post.id}
-								votesCount={post.votesCount}
-								commentsNumber={post.commentsNumber}
-						    />
-				})}
-			</PostContainer>
-		);
-	};
-};
+	return (
+		<PostContainer>
+			<NewPost/>
+			{props.posts.map(post => {
+				return <PostCard
+							title={post.title}
+							username={post.username}
+							text={post.text}
+							id={post.id}
+							votesCount={post.votesCount}
+							commentsNumber={post.commentsNumber}
+						/>
+			})}
+		</PostContainer>
+	)
+
+}
+
 
 const mapStateToProps = (state) => {
 	return {
